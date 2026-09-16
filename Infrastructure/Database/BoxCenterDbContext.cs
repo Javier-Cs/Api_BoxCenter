@@ -11,5 +11,12 @@ namespace Api_BoxCenter.Infrastructure.Database
 
         public DbSet<Empresa> Empresas => Set<Empresa>();
         public DbSet<Usuario> Usuarios => Set<Usuario>();
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder) {
+            modelBuilder.ApplyConfigurationsFromAssembly(
+                typeof(BoxCenterDbContext).Assembly);
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
