@@ -11,7 +11,7 @@ namespace Api_BoxCenter.Domain.Entities
         public string Email {  get; set; } = string.Empty;
         public string PassHash { get; set; } = string.Empty;
         public string UrlImgUser { get; set; } = string.Empty;
-        public bool EstadoUser { get; set; } = false;
+        public bool EstadoUser { get; set; } = true;
         public bool IsDeleted { get; set; } = false;
         public DateTime FechaCreacion { get; set; }
         public DateTime FechaModificacion { get; set; }

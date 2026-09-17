@@ -10,12 +10,15 @@ namespace Api_BoxCenter.Configuration
         // configuracion de la tabla de la base de datos 
         public void Configure(EntityTypeBuilder<Empresa> builder) {
 
+            // esti si entendi 
+
             // nombre de tabla 
             builder.ToTable("empresa_tbl");
 
             // definicion de primary key
             builder.HasKey(x => x.IdEmpresa); 
 
+            // corresponder esta propiedad a la enmpresa en la tabla   
             builder.Property(x => x.IdEmpresa)
                 .HasColumnName("id_empresa");
 
@@ -43,7 +46,7 @@ namespace Api_BoxCenter.Configuration
 
             builder.Property(x => x.IsDeleted)
                 .HasColumnName("is_deleted")
-                .HasDefaultValue(true)
+                .HasDefaultValue(false)
                 .IsRequired();
 
             builder.Property(x => x.FechaCreacionEmpresa)
@@ -52,11 +55,13 @@ namespace Api_BoxCenter.Configuration
                 .IsRequired();
 
             builder.Property(x => x.FechaModificacion)
-                .HasColumnName("")
+                .HasColumnName("fecha_modificacion")
                 .HasDefaultValueSql("SYSUTCDATETIME()")
                 .IsRequired();
 
-            builder.HasIndex(x => x.NombreEmpresa)
+            //implementacion de indice unico
+
+           builder.HasIndex(x => x.NombreEmpresa)
                 .IsUnique();
 
 

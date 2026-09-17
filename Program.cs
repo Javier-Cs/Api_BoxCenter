@@ -1,4 +1,4 @@
-using Scalar.AspNetCore;
+  using Scalar.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Api_BoxCenter.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;

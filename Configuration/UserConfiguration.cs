@@ -8,7 +8,7 @@ namespace Api_BoxCenter.Configuration
     {
         public void Configure(EntityTypeBuilder<Usuario> builder)
         {
-
+            // eto lo entendi 
             // nombre de la tabla 
             builder.ToTable("usuario_tbl");
 
@@ -33,6 +33,7 @@ namespace Api_BoxCenter.Configuration
                 .HasColumnName("rol")
                 .HasMaxLength(20)
                 .IsUnicode(false)
+                .HasConversion<string>()
                 .IsRequired();
 
             builder.Property(x => x.Email)
@@ -57,12 +58,12 @@ namespace Api_BoxCenter.Configuration
 
             builder.Property(x => x.EstadoUser)
                 .HasColumnName("estado_user")
-                .HasDefaultValue()
+                .HasDefaultValue(true)
                 .IsRequired();
 
             builder.Property(x => x.IsDeleted)
                 .HasColumnName("is_deleted")
-                .HasDefaultValue()
+                .HasDefaultValue(false)
                 .IsRequired();
 
             builder.Property(x => x.FechaCreacion)
@@ -75,6 +76,8 @@ namespace Api_BoxCenter.Configuration
                 .HasDefaultValueSql("SYSUTCDATETIME()")
                 .IsRequired();
 
+
+            // indice unico de nombre de empresa e email de usuario
             builder.HasIndex(x => new
             {
                 x.EmpresaId,
@@ -82,8 +85,10 @@ namespace Api_BoxCenter.Configuration
             })
                 .IsUnique();
 
+
+            //explicame esto
             builder.HasOne(x => x.Empresa)
-                .WithMany(x => x.Usuario)
+                .WithMany(x => x.Usuarios)
                 .HasForeignKey(x => x.EmpresaId)
                 .OnDelete(DeleteBehavior.Restrict);
         }
