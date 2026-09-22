@@ -18,5 +18,8 @@ namespace Api_BoxCenter.Domain.Entities
 
         // Navegacion
         public Empresa Empresa { get; set; } = null!;
+
+        public ICollection<Sessiones> Sessiones { get; set; } = new List<Sessiones>();
+        public ICollection<Buckets> Buckets { get; set; } = new List<Buckets>();
     }
 }

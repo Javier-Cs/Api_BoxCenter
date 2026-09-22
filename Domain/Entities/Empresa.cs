@@ -13,5 +13,6 @@
 
         // Navegacion
         public ICollection<Usuario> Usuarios { get; set; } = new List<Usuario>();
+        public ICollection<Buckets> Buckets { get; set; } = new List<Buckets>();
     }
 }
