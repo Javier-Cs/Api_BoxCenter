@@ -9,11 +9,15 @@
         public DateTime FechaDeCreacion { get; set; }
 
 
-        public Buckets Buckets { get; set; } = null!;+
+        public Buckets Buckets { get; set; } = null!;
 
         // carpeta Padre
         public Folder? parentFolder { get; set; }
+
+
         //carpeta hija
-        public ICollection<Folder> children { get; set; } = new List<Folder>(); 
+        public ICollection<Folder> Children { get; set; } = new List<Folder>(); 
+        public ICollection<Permisos> Permisos { get; set; } = new List<Permisos>();
+        public ICollection<Files> Files { get; set; } = new List<Files>();
     }
 }
