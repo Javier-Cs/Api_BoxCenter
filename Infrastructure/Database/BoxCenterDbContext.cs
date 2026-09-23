@@ -14,6 +14,8 @@ namespace Api_BoxCenter.Infrastructure.Database
         // nos permitira realizar consultas LINQ a SQL segun la el contexto de la entidad   
         public DbSet<Empresa> Empresas => Set<Empresa>();
         public DbSet<Usuario> Usuarios => Set<Usuario>();
+        public DbSet<Sessiones> Sessiones => Set<Sessiones>();
+        public DbSet<ApiKey> ApiKey => Set<ApiKey>();
 
 
 

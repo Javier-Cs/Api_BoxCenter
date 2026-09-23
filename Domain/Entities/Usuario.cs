@@ -20,7 +20,7 @@ namespace Api_BoxCenter.Domain.Entities
         public Empresa Empresa { get; set; } = null!;
 
         public ICollection<Sessiones> Sessiones { get; set; } = new List<Sessiones>();
-       //public ICollection<Buckets> CreatedBuckets { get; set; } = new List<Buckets>();
+        public ICollection<Buckets> CreatedBuckets { get; set; } = new List<Buckets>();
         public ICollection<Permisos> Permisos { get; set; } = new List<Permisos>();
         public ICollection<Files> Files { get; set; } = new List<Files>();
         public ICollection<ApiKey> ApiKey { get; set; } = new List<ApiKey>();
